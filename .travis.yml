@@ -1,0 +1,28 @@
+language: objective-c
+before_script:
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in profiles/XC_.mobileprovision.enc -d -a -out profiles/XC_.mobileprovision
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in CI/certs/iPhone\ Distribution\ -\ Ferdly\ Sethio\ \(X98MS7WPFA\).cer.enc -out CI/certs/iPhone\ Distribution\ -\ Ferdly\ Sethio\ \(X98MS7WPFA\).cer
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in CI/certs/iPhone\ Distribution\ -\ Ferdly\ Sethio\ \(X98MS7WPFA\).p12.enc -out CI/certs/iPhone\ Distribution\ -\ Ferdly\ Sethio\ \(X98MS7WPFA\).p12
+- "./CI/scripts/add-key.sh"
+script:
+- "./CI/scripts/build.sh"
+after_success:
+- "./CI/scripts/deploy.sh"
+after_script:
+- "./CI/scripts/remove-key.sh"
+install: true
+env:
+  global:
+  - REPO_SLUG="bungferdly2359/TestTravisCI"
+  - PRODUCT_NAME="TestTravisCI "
+  - PROJECT_NAME="TestTravisCI.xcworkspace"
+  - 'SCHEME_NAME="TestTravisCI"'
+  - INFO_PLIST_PATH="TestTravisCI/Parapet-Info.plist"
+  - 'DEVELOPER_NAME="iPhone Distribution: Ferdly Sethio (X98MS7WPFA)"'
+  - 'PROFILE_NAME="iOS Development"'
+  - APP_ID="229"
+  - APP_MANAGER_API_TOKEN="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEsImFwaV9rZXkiOiIzYTcwOWY0ZC1kYTM1LTRmODQtOTY0MC01NTIwNGI0ZjYzNzAifQ.HHcupTED9IV-sweu3of1F5YTV49MleRkxmyKRBJkcus"
+  #KEY_PASSWORD
+  - secure: GOL2NkmpB4K07zu8SAnwNPOdzmy3bD8uhCxzIZXlZJnLJyQNV8yEN3p+FHR/sbJyWjtgzSKpd8W3lDSWLFxsxon8o4FVpnxulFe1EehxlCPpRCCDdSLc3WjOtnKInUmqwrgJTJkVDgtyPfWZiPwMUnVxI6J8r2roPMYuzo0BXYc=
+  #ENCRYPTION_SECRET
+  - secure: JAmK55skJX1T2bpNuxqOKx/VOLrRttrF6bB15U8YC9oBCstGnEx67whOTzBdFbzy8ELZYfb0+0BX6OkeQsezflsnicVZzA5uJnkTNgcDr7MVfYcm9/7NcQ1fkUTcr/ZNiWdydemYnBm917HXMs8UyUUYIJ1tkcypnAZ43U/YgNg=
