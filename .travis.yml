@@ -19,7 +19,7 @@ env:
   - 'SCHEME_NAME="TestTravisCI"'
   - INFO_PLIST_PATH="TestTravisCI/Parapet-Info.plist"
   - 'DEVELOPER_NAME="iPhone Distribution: Ferdly Sethio (X98MS7WPFA)"'
-  - 'PROFILE_NAME="iOS Development"'
+  - 'PROFILE_NAME="XC. *"'
   - APP_ID="229"
   - APP_MANAGER_API_TOKEN="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEsImFwaV9rZXkiOiIzYTcwOWY0ZC1kYTM1LTRmODQtOTY0MC01NTIwNGI0ZjYzNzAifQ.HHcupTED9IV-sweu3of1F5YTV49MleRkxmyKRBJkcus"
   #KEY_PASSWORD
