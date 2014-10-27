@@ -4,7 +4,7 @@
 set -e
 set -o pipefail
 
-DESTINATION="platform=iOS Simulator,name=iPhone Retina (4-inch)"
+DESTINATION="platform=iOS Simulator,name=iPhone 5"
 
 echo ""
 echo "************************************************************************"
