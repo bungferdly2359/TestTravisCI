@@ -4,7 +4,7 @@
 set -e
 set -o pipefail
 
-HAVE_XCPRETTY = "gem list xcpretty -i"
+HAVE_XCPRETTY="gem list xcpretty -i"
 if ! $HAVE_XCPRETTY; then 
 	gem install xcpretty
 fi
