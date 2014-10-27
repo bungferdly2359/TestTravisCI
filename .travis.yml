@@ -17,7 +17,7 @@ env:
   - PRODUCT_NAME="TestTravisCI "
   - PROJECT_NAME="TestTravisCI.xcworkspace"
   - 'SCHEME_NAME="TestTravisCI"'
-  - INFO_PLIST_PATH="TestTravisCI/Parapet-Info.plist"
+  - INFO_PLIST_PATH="TestTravisCI/Info.plist"
   - 'DEVELOPER_NAME="iPhone Distribution: Ferdly Sethio (X98MS7WPFA)"'
   - 'PROFILE_NAME="XC: *"'
   - APP_ID="229"
