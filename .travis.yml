@@ -1,6 +1,6 @@
 language: objective-c
 before_script:
-- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in CI/profiles/XC_.mobileprovision.enc -d -a -out CI/profiles/XC_.mobileprovision
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in CI/profiles/FSAdHoc.mobileprovision.enc -d -a -out CI/profiles/FSAdHoc.mobileprovision
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in CI/certs/iPhone\ Distribution\ -\ Ferdly\ Sethio\ \(X98MS7WPFA\).cer.enc -d -a -out CI/certs/iPhone\ Distribution\ -\ Ferdly\ Sethio\ \(X98MS7WPFA\).cer
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in CI/certs/iPhone\ Distribution\ -\ Ferdly\ Sethio\ \(X98MS7WPFA\).p12.enc -d -a -out CI/certs/iPhone\ Distribution\ -\ Ferdly\ Sethio\ \(X98MS7WPFA\).p12
 - "./CI/scripts/add-key.sh"
@@ -19,7 +19,7 @@ env:
   - 'SCHEME_NAME="TestTravisCI"'
   - INFO_PLIST_PATH="TestTravisCI/Info.plist"
   - 'DEVELOPER_NAME="iPhone Distribution: Ferdly Sethio (X98MS7WPFA)"'
-  - 'PROFILE_NAME="XC: *"'
+  - 'PROFILE_NAME="FSAdHoc"'
   - APP_ID="229"
   - APP_MANAGER_API_TOKEN="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEsImFwaV9rZXkiOiIzYTcwOWY0ZC1kYTM1LTRmODQtOTY0MC01NTIwNGI0ZjYzNzAifQ.HHcupTED9IV-sweu3of1F5YTV49MleRkxmyKRBJkcus"
   #KEY_PASSWORD
